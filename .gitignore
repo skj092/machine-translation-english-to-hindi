@@ -1,0 +1,6 @@
+venv
+__pycache__/
+tokenizer_en
+tokenizer_hi
+*.json
+wandb/
