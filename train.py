@@ -108,7 +108,7 @@ def get_or_load_tokenizer(config, ds, lang):
         trainer = WordLevelTrainer(
             special_tokens=["[UNK]", "[PAD]", "[SOS]", "[EOS]"], min_frequency=3)
         tokenizer.train_from_iterator(
-            get_all_sent(ds, config['src_lang']), trainer)
+            get_all_sent(ds, lang), trainer)
         tokenizer.save(str(tokenizer_path))
     else:
         tokenizer = Tokenizer.from_file(str(tokenizer_path))
